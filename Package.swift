@@ -14,7 +14,7 @@ let package = Package(
         ),
         .package(
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
-            from: "12.0.0"
+            "12.0.0"..<"14.0.0"
         ),
     ],
     targets: [
