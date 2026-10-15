@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "Adfurikun-SPM-AdMob",
+    name: "AdfurikunAdMob",
     platforms: [.iOS(.v13)],
     products: [
         .library(name: "AdfurikunAdMob", targets: ["AdfurikunAdMob"])
@@ -10,7 +10,7 @@ let package = Package(
     dependencies: [
         .package(
             url: "https://github.com/glossom-dev/Adfurikun-SPM-Core.git",
-            exact: "4.5.0-alpha.3"
+            exact: "4.5.0-alpha.4"
         ),
         .package(
             url: "https://github.com/googleads/swift-package-manager-google-mobile-ads.git",
@@ -25,6 +25,9 @@ let package = Package(
                 .product(name: "GoogleMobileAds", package: "swift-package-manager-google-mobile-ads")
             ],
             path: "Sources",
+            resources: [
+                .process("MovieNativeAdView6019.xib")
+            ],
             publicHeadersPath: "."
         )
     ]

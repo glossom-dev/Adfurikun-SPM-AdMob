@@ -294,7 +294,12 @@ static void ADFRegisterLegacyNativeAdViewIfNeeded(GADNativeAd *nativeAd,
 }
 
 - (void)makeSubviews {
-    NSArray <UIView *>*result = [[UINib nibWithNibName:@"MovieNativeAdView6019" bundle:nil] instantiateWithOwner:self options:nil];
+#if SWIFT_PACKAGE
+    NSBundle *bundle = SWIFTPM_MODULE_BUNDLE;
+#else
+    NSBundle *bundle = [NSBundle bundleForClass:[MovieNativeAdView6019 class]];
+#endif
+    NSArray <UIView *>*result = [[UINib nibWithNibName:@"MovieNativeAdView6019" bundle:bundle] instantiateWithOwner:self options:nil];
     UIView *_view = result.firstObject;
     [self viewSetted:_view];
 }
